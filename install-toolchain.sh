@@ -11,6 +11,13 @@ check_root () {
   fi
 }
 
+check_nonroot () {
+  if [ $(id -u) = 0 ]; then
+    echo "This script must not be run as root!"
+    exit 1
+  fi
+}
+
 install_ubuntu () {
   check_root
 
@@ -27,6 +34,8 @@ install_mint () {
 }
 
 install_macos () {
+  check_nonroot
+
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew install go zsh
   exit 0
