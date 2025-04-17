@@ -1,0 +1,27 @@
+[user]
+	email = gam7491@gmail.com 
+	name = Greg Mitchell
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+	editor = vim
+[push]
+	default = simple
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+	s = status
+	ci = commit
+	cia = commit -a
+	ciam = commit -a --amend
+	co = checkout
+	br = branch
+	rmbr = branch -d
+	rmbrf = branch -D
+	diff = diff --word-diff
+	d  = diff HEAD
+	d1 = diff HEAD^
+	d2 = diff HEAD~2
+	rh = reset --hard
+[init]
+	defaultBranch = main
