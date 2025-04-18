@@ -61,6 +61,7 @@ main () {
     cp_checked .zsh_aliases "$HOME"
     cp_checked .vimrc "$HOME"
     cp_checked .gitconfig "$HOME"
+    cp -r scripts "$HOME"
 
     echo
     echo "Creating toolchain and development directories..."

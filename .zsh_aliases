@@ -1,9 +1,8 @@
 # ls - common options
-alias ls='ls --color=auto'
-alias ls='ls --color=auto -G'
-alias ll='ls --color=auto -ahlG'
-alias la='ls -AG'
-alias l='ls -CFG'
+alias ls='ls --color=auto -vG'
+alias ll='ls --color=auto -ahlvG'
+alias la='ls --color=auto -vAG'
+alias l='ls --color=auto -vCFG'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

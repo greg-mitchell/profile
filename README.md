@@ -41,5 +41,5 @@ On Mac:
 
 ### Configs
 
-- **Git** config with commonly-used aliases
+- **Git** config with commonly-used aliases, including helpers in `~/scripts`
 - **Vim** config and a small number of plugins

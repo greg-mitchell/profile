@@ -1,5 +1,5 @@
 [user]
-	email = gam7491@gmail.com 
+	email = gam7491@gmail.com
 	name = Greg Mitchell
 [color]
 	ui = auto
@@ -17,12 +17,14 @@
 	ciam = commit -a --amend
 	co = checkout
 	br = branch
-	rmbr = branch -d
-	rmbrf = branch -D
 	diff = diff --word-diff
 	d  = diff HEAD
 	d1 = diff HEAD^
 	d2 = diff HEAD~2
-	rh = reset --hard
+    rh = reset --hard
+    r1 = reset --mixed HEAD^
+    r2 = reset --mixed HEAD~2
+    closebranch = !"~/scripts/git-pull-brd.sh"
+    prb = !"~/scripts/git-pull-rebase-master.sh"
 [init]
 	defaultBranch = main
