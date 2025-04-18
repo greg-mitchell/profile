@@ -24,3 +24,22 @@ On Mac:
 ./install-toolchain.sh
 ./setup-profile.sh
 ```
+
+## Configured Tools
+
+### Toolchains
+
+- Go: installs and adds to path
+
+### Shell
+
+- Installs and `chsh` to Zsh
+- Uses [Oh my zsh](https://ohmyz.sh/)
+- Sets the theme to [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- Installs a [Nerd Font](https://github.com/ryanoasis/nerd-fonts) to show the nifty
+  symbols used by P10k
+
+### Configs
+
+- **Git** config with commonly-used aliases
+- **Vim** config and a small number of plugins
