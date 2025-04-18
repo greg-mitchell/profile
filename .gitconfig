@@ -1,30 +1,30 @@
 [user]
-	email = gam7491@gmail.com
-	name = Greg Mitchell
+    email = gam7491@gmail.com
+    name = Greg Mitchell
 [color]
-	ui = auto
+    ui = auto
 [core]
-	pager = less -FMRiX
-	editor = vim
+    pager = less -FMRiX
+    editor = vim
 [push]
     autoSetupRemote = true
-	default = simple
+    default = simple
 [alias]
-	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
-	s = status
-	ci = commit
-	cia = commit -a
-	ciam = commit -a --amend
-	co = checkout
-	br = branch
-	diff = diff --word-diff
-	d  = diff HEAD
-	d1 = diff HEAD^
-	d2 = diff HEAD~2
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    s = status
+    ci = commit
+    cia = commit -a
+    ciam = commit -a --amend
+    co = checkout
+    br = branch
+    diff = diff --word-diff
+    d  = diff HEAD
+    d1 = diff HEAD^
+    d2 = diff HEAD~2
     rh = reset --hard
     r1 = reset --mixed HEAD^
     r2 = reset --mixed HEAD~2
     closebranch = !"~/scripts/git-pull-brd.sh"
     prb = !"~/scripts/git-pull-rebase-master.sh"
 [init]
-	defaultBranch = main
+    defaultBranch = main

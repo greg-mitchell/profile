@@ -80,6 +80,9 @@ source "$ZSH/oh-my-zsh.sh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## zsh-autocomplete configuration
+# wait longer
+zstyle ':autocomplete:*' delay 0.1  # seconds (float)
+
 # Make Tab and ShiftTab change the selection in the menu. Default: insert completion
 # Needed to handle multi-column completions with arrow key rebound.
 bindkey -M menuselect              '^I'         menu-complete
