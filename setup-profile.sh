@@ -55,12 +55,7 @@ main () {
 
     echo
     echo "Copying profile from working directory..."
-
-    cp_checked .zshrc "$HOME"
-    cp_checked .p10k.zsh "$HOME"
-    cp_checked .zsh_aliases "$HOME"
-    cp_checked .vimrc "$HOME"
-    cp_checked .gitconfig "$HOME"
+    find "$PWD/dotfiles" -type f | xargs -I {} cp -v {} $HOME
     cp -r scripts "$HOME"
 
     echo
@@ -132,12 +127,15 @@ checkout_latest () {
     # - destination dir (absolute path)
 
     if [ -d "$2" ]; then
-        # since git shallow copies can't cheaply be updated to latest, instead wipe
-        # away the plugin and redownload.
-        rm -rf "$2"
+        # Git doesn't print what repo you're pulling. Make the message more informative.
+        echo "Pulling updates for $2..."
+        git pull
+        return
     fi
 
-    git clone --depth=1 $1 "$2"
+    # Treeless clones only fetch reachable commit history and data at HEAD.
+    # These allow for cheaper fetches than the older "shallow clone" feature.
+    git clone --filter=tree:0 $1 "$2"
 }
 
 checkout_latest_zsh () {
@@ -150,18 +148,6 @@ checkout_latest_zsh () {
     DST="$ZSH_CUSTOM/$2"
 
     checkout_latest $1 "$DST"
-}
-
-cp_checked () {
-    # Copies a file $1 from cwd to $2, checking first that it exists
-    # If the file doesn't exist, prints a message and exits.
-
-    if ! [ -f "./$1" ]; then
-        echo "$1 was not found in working directory, run this script from backup dir"
-        exit 1
-    fi
-
-    cp "$1" "$2"
 }
 
 main
