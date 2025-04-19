@@ -2,6 +2,19 @@
 
 This repo contains my configured profile dotfiles, plus setup scripts.
 
+Example prompt with reverse history search:
+
+![alt text](docs/history_completion.png "Reverse history search with prompt")
+
+Argument completions, both subcommands and flags:
+
+![alt text](docs/git_subcommand_completion.png "Git subcommand completion")
+![alt text](docs/grep_flag_completion.png "Grep flag completion")
+
+Vim style:
+
+![alt text](docs/vim.png "Vim styling")
+
 ## Supported Environments
 
 - Debian-based Linux distros (Ubuntu and Mint have been tested)
@@ -43,3 +56,7 @@ On Mac:
 
 - **Git** config with commonly-used aliases, including helpers in `~/scripts`
 - **Vim** config and a small number of plugins
+
+## Why These Choices?
+
+See [Why Not X?](docs/why-not.md)
