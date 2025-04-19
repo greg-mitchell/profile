@@ -26,7 +26,7 @@ install_ubuntu () {
   exit 0
 }
 
-install_mint () {
+install_non_snap_debian () {
   check_root
 
   apt install -y golang zsh
@@ -44,14 +44,16 @@ install_macos () {
 # Test OS for which package manager to use
 if [[ $(uname -s) == "Darwin" ]]; then
   install_macos
-fi
-
-if grep -q Ubuntu /etc/lsb-release; then
-  install_ubuntu
-fi
-
-if grep -q Mint /etc/lsb-release; then
-  install_mint
+elif [ -f /etc/lsb-release ]; then
+    # This applies for most Debian-based distros
+    if grep -q Ubuntu /etc/lsb-release; then
+      install_ubuntu
+    elif grep -q Mint /etc/lsb-release; then
+      install_non_snap_debian
+    fi
+elif [ -f /etc/debian_version ]; then
+    # Fallback for other Debian versions like Raspbian
+    install_non_snap_debian
 fi
 
 echo "Unsupported OS: $(uname -s). Must be a Debian flavor or MacOS."
