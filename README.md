@@ -59,6 +59,7 @@ omitted if you're not me, since it includes references to my publickey files.
 
 - **Git** config with commonly-used aliases, including helpers in `~/scripts`
 - **Vim** config and a small number of plugins
+- **SSH** config, see [doc](docs/ssh.md)
 
 ## Why These Choices?
 
