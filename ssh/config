@@ -1,0 +1,25 @@
+ Host *.internal
+     HostName %h
+     User greg
+     IdentityFile ~/.ssh/id_ed25519_lan_gam7491
+     IdentitiesOnly yes
+     PasswordAuthentication no
+     PreferredAuthentications publickey
+     # OSes typically run ssh-agent on UI shell login, for example with keychain
+     # integration Apple and Gnome. That doesn't run it on ssh login though.
+     # This is generally not safe to do with wildcards, but this TLD is only
+     # valid on LAN, so it should be safe.
+     ForwardAgent yes
+     # Enable connection multiplexing (avoids handshake overhead)
+     ControlPath ~/.ssh/controlmasters/%r@%h:%p
+     ControlMaster auto
+     ControlPersist 30s
+
+ Host github.com
+     IdentityFile ~/.ssh/id_ed25519_github
+     IdentitiesOnly yes
+     # Enable connection multiplexing (avoids handshake overhead)
+     ControlPath ~/.ssh/controlmasters/%r@%h:%p
+     ControlMaster auto
+     ControlPersist 1m
+

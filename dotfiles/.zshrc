@@ -80,7 +80,9 @@ source "$ZSH/oh-my-zsh.sh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## zsh-autocomplete configuration
-# wait longer
+# Wait for more input, longer time to reduce flickering and input delay that
+# eats input while waiting for completions.
+zstyle ':autocomplete:*' min-input 2
 zstyle ':autocomplete:*' delay 0.1  # seconds (float)
 
 # Make Tab and ShiftTab change the selection in the menu. Default: insert completion

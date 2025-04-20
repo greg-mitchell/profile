@@ -57,6 +57,8 @@ main () {
     echo "Copying profile from working directory..."
     find "$PWD/dotfiles" -type f | xargs -I {} cp -v {} $HOME
     cp -r scripts "$HOME"
+    mkdir -pv "$HOME/.ssh/controlmasters"
+    cp -v ssh/* "$HOME/.ssh"
 
     echo
     echo "Creating toolchain and development directories..."
