@@ -38,6 +38,9 @@ On Mac:
 ./setup-profile.sh
 ```
 
+Note that the installed `.ssh/config` file will need to be customized or
+omitted if you're not me, since it includes references to my publickey files.
+
 ## Configured Tools
 
 ### Toolchains
