@@ -21,7 +21,7 @@ check_nonroot () {
 install_ubuntu () {
   check_root
 
-  apt install -y zsh
+  apt install -y vim zsh
   snap install --classic go
   exit 0
 }
@@ -29,7 +29,7 @@ install_ubuntu () {
 install_non_snap_debian () {
   check_root
 
-  apt install -y golang zsh
+  apt install -y golang vim zsh
   exit 0
 }
 
@@ -37,7 +37,7 @@ install_macos () {
   check_nonroot
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install go zsh
+  brew install go vim zsh
   exit 0
 }
 
