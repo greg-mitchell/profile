@@ -51,7 +51,7 @@ main () {
 
     echo
     echo "Install vim pathogen plugins..."
-    checkout_latest https://github.com/ntpeters/vim-better-whitespace.git "$HOME/.vim/bundle/vim-better-whitespace"
+    install_pathogen
 
     echo
     echo "Copying profile from working directory..."
@@ -150,6 +150,18 @@ checkout_latest_zsh () {
     DST="$ZSH_CUSTOM/$2"
 
     checkout_latest $1 "$DST"
+}
+
+install_pathogen () {
+    # installs the pathogen plugin manager plus manually-added Vim plugins.
+    if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
+        echo "Pathogen is already installed. Installing plugins..."
+    else
+        checkout_latest https://github.com/tpope/vim-pathogen.git "$HOME/.vim/vim-pathogen"
+        mkdir -pv ~/.vim/autoload ~/.vim/bundle
+        ln -vs "$HOME/.vim/vim-pathogen/autoload/pathogen.vim" "$HOME/.vim/autoload/pathogen.vim"
+    fi
+    checkout_latest https://github.com/ntpeters/vim-better-whitespace.git "$HOME/.vim/bundle/vim-better-whitespace"
 }
 
 main
