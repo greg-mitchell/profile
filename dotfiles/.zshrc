@@ -65,7 +65,9 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	fast-syntax-highlighting
+# This plugin seems to be a major source of input lag.
+# Disable for now.
+#    fast-syntax-highlighting
   zsh-autocomplete)
 
 # Avoids duplicate loads for additional completions
