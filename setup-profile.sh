@@ -11,7 +11,7 @@ NF_FONT_FAMILY="${NF_FONT_FAMILY:-Meslo}"
 NF_RELEASE="${NF_RELEASE:-v3.3.0}"
 
 main () {
-    if grep -wq "/usr/bin/zsh" /etc/shells; then
+    if grep -q "zsh" /etc/shells; then
         echo "~~ Greg's Profile Setup Script ~~"
         echo "WARNING! This will overwrite many dotfiles including .zshrc"
         echo "If any configuration should be preserved, please copy before running this script."

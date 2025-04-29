@@ -105,4 +105,4 @@ bindkey -M menuselect '^M' .accept-line
 source ~/.zsh_aliases
 EDITOR=/usr/bin/vim
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$(go env GOPATH)/bin:$HOME/.local/bin:$PATH"

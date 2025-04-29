@@ -23,6 +23,7 @@ install_ubuntu () {
 
   apt install -y vim zsh
   snap install --classic go
+  curl -LsSf https://astral.sh/uv/install.sh | sh
   exit 0
 }
 
@@ -30,14 +31,17 @@ install_non_snap_debian () {
   check_root
 
   apt install -y golang vim zsh
+  curl -LsSf https://astral.sh/uv/install.sh | sh
   exit 0
 }
 
 install_macos () {
   check_nonroot
 
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install go vim zsh
+  if [ -z $(which brew) ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+  brew install go uv vim wget zsh
   exit 0
 }
 
